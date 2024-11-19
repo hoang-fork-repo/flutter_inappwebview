@@ -2,16 +2,14 @@ import 'dart:collection';
 import 'dart:typed_data';
 import 'dart:ui';
 
-import '../find_interaction/platform_find_interaction_controller.dart';
-import '../pull_to_refresh/platform_pull_to_refresh_controller.dart';
-
 import '../context_menu/context_menu.dart';
+import '../find_interaction/platform_find_interaction_controller.dart';
+import '../print_job/main.dart';
+import '../pull_to_refresh/platform_pull_to_refresh_controller.dart';
 import '../types/main.dart';
-
 import '../web_uri.dart';
 import 'in_app_webview_settings.dart';
 import 'platform_inappwebview_controller.dart';
-import '../print_job/main.dart';
 
 ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams}
 ///Class that represents a WebView. Used by [InAppWebView], [HeadlessInAppWebView] and the WebView of [PlatformInAppBrowser].
@@ -141,6 +139,9 @@ class PlatformWebViewCreationParams<T> {
   ///{@endtemplate}
   final void Function(T controller, ConsoleMessage consoleMessage)?
       onConsoleMessage;
+
+  ///     onFilePicker
+  final List<String> Function(List<String> acceptedType)? onFilePickerOpen;
 
   ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.shouldOverrideUrlLoading}
   ///Give the host application a chance to take control when a URL is about to be loaded in the current WebView.
@@ -1196,6 +1197,7 @@ class PlatformWebViewCreationParams<T> {
       this.onReceivedHttpError,
       this.onProgressChanged,
       this.onConsoleMessage,
+      this.onFilePickerOpen,
       this.shouldOverrideUrlLoading,
       this.onLoadResource,
       this.onScrollChanged,

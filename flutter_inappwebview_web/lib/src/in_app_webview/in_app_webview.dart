@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+
 import '../../web/web_platform_manager.dart';
 import 'headless_in_app_webview.dart';
-
 import 'in_app_webview_controller.dart';
 
 /// Object specifying creation parameters for creating a [PlatformInAppWebViewWidget].
@@ -30,6 +30,7 @@ class WebPlatformInAppWebViewWidgetCreationParams
       super.onReceivedHttpError,
       super.onProgressChanged,
       super.onConsoleMessage,
+      super.onFilePickerOpen,
       super.shouldOverrideUrlLoading,
       super.onLoadResource,
       super.onScrollChanged,
@@ -152,6 +153,7 @@ class WebPlatformInAppWebViewWidgetCreationParams
             onReceivedHttpError: params.onReceivedHttpError,
             onProgressChanged: params.onProgressChanged,
             onConsoleMessage: params.onConsoleMessage,
+            onFilePickerOpen: params.onFilePickerOpen,
             shouldOverrideUrlLoading: params.shouldOverrideUrlLoading,
             onLoadResource: params.onLoadResource,
             onScrollChanged: params.onScrollChanged,

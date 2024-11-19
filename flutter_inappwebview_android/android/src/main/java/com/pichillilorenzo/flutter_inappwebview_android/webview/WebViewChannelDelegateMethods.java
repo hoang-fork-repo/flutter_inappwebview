@@ -85,5 +85,6 @@ public enum WebViewChannelDelegateMethods {
   isInFullscreen,
   clearFormData,
   hideInputMethod,
-  showInputMethod
+  showInputMethod,
+  onFilePicked
 }

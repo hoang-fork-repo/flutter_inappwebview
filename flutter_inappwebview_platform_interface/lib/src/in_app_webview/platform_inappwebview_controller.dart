@@ -161,6 +161,13 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getUrl is not implemented on the current platform');
   }
 
+
+  ///onFilePicked
+  Future<void> onFilePicked(List<String> files) {
+    throw UnimplementedError(
+        'onFilePicked is not implemented on the current platform');
+  }
+
   ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getTitle}
   ///Gets the title for the current page.
   ///
